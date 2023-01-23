@@ -1,6 +1,15 @@
 name: ros-2
 
 version_control:
+  - slam/g2o:
+    github: RainerKuemmerle/g2o
+
+  - slam/pclomp:
+    github: dfki-ric/pclomp
+
+  - slam/pointmatcher:
+    github: skasperski/libpointmatcher
+
   - slam/slam3d:
     github: dfki-ric/slam3d
 

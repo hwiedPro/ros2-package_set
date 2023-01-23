@@ -1,3 +1,15 @@
 colcon:
-    ubuntu: python3-colcon-common-extensions
+  ubuntu: python3-colcon-common-extensions
+
+jsoncpp:
+  ubuntu,debian: libjsoncpp-dev
+
+flann:
+  debian,ubuntu: libflann-dev 
+
+slam/pcl:
+  ubuntu: libpcl-dev
+
+suitesparse:
+  ubuntu: libsuitesparse-dev
 

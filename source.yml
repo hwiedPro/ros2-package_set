@@ -1,0 +1,6 @@
+name: ros-2
+
+version_control:
+  - slam/slam3d:
+    github: dfki-ric/slam3d
+

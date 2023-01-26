@@ -1,5 +1,7 @@
 import_package "slam/slam3d"
+import_package "slam/slam3d_ros2"
 import_package "slam/g2o"
 import_package "slam/pclomp"
 import_package "slam/pointmatcher"
+
 

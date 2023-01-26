@@ -13,3 +13,6 @@ version_control:
   - slam/slam3d:
     github: dfki-ric/slam3d
 
+  - slam/slam3d_ros2:
+    github: dfki-ric/slam3d_ros2
+

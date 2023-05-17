@@ -1,0 +1,66 @@
+### ROS2 FOXY
+
+# note: search for the package
+# sudo apt-cache search ros-foxy | grep robot-state-publisher
+
+ros2-controller-manager:
+    ubuntu: ros-foxy-controller-manager
+
+ros2-geometry-msgs:
+    ubuntu: ros-foxy-geometry-msgs
+
+ros2-joint-state-broadcaster:
+    ubuntu: ros-foxy-joint-state-broadcaster
+
+ros2-joint-state-publisher:
+    ubuntu: ros-foxy-joint-state-publisher
+
+ros2-joint-state-publisher-gui:
+    ubuntu: ros-foxy-joint-state-publisher-gui
+
+ros2-joint-trajectory-controller:
+    ubuntu: ros-foxy-joint-trajectory-controller
+
+ros2-position-controllers:
+    ubuntu: ros-foxy-position-controllers
+
+ros2-robot-state-publisher:
+    ubuntu: ros-foxy-robot-state-publisher
+
+ros2-ros2-control:
+    ubuntu: ros-foxy-ros2-control
+
+ros2-rviz2:
+    ubuntu: ros-foxy-rviz2
+
+ros2-sensor-msgs:
+    ubuntu: ros-foxy-sensor-msgs
+
+ros2-urdf:
+    ubuntu: ros-foxy-urdf
+
+ros2-xacro:
+    ubuntu: ros-foxy-xacro
+
+
+
+### ros2 foxy gazebo classic (gazebo 11.11)
+
+ros2-gazebo-ros-pkgs:
+    ubuntu: ros-foxy-gazebo-ros-pkgs
+
+ros2-gazebo-ros2-control:
+    ubuntu: ros-foxy-gazebo-ros2-control
+
+
+
+### ros2 foxy gazebo inginition
+
+ros2-ros-ign-gazebo:
+    ubuntu: ros-foxy-ros-ign-gazebo
+
+ros2-ign-ros2-control:
+    ubuntu: ros-foxy-ign-ros2-control
+
+ros2-ros-ign-bridge:
+    ubuntu: ros-foxy-ros-ign-bridge

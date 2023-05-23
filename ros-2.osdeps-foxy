@@ -49,7 +49,7 @@ ros2-launch:
     ubuntu: ros-foxy-launch
 
 ros2-launch-ros:
-    ubunut: ros-foxy-launch-ros
+    ubuntu: ros-foxy-launch-ros
 
 ros2-pluginlib:
     ubuntu: ros-foxy-pluginlib
@@ -76,7 +76,7 @@ ros2-ros2-control:
     ubuntu: ros-foxy-ros2-control
 
 ros2-ros2controlcli:
-    ubunut: ros-foxy-ros2controlcli
+    ubuntu: ros-foxy-ros2controlcli
 
 ros2-rviz2:
     ubuntu: ros-foxy-rviz2
@@ -97,7 +97,7 @@ ros2-velocity-controllers:
     ubuntu: ros-foxy-velocity-controllers
 
 ros2-effort-controllers:
-    ubunut: ros-foxy-effort-controllers
+    ubuntu: ros-foxy-effort-controllers
 
 ros2-urdf:
     ubuntu: ros-foxy-urdf

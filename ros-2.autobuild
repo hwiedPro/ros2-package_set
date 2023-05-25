@@ -4,4 +4,4 @@ import_package "slam/g2o"
 import_package "slam/pclomp"
 import_package "slam/pointmatcher"
 
-
+default_packages(['ros-foxy-desktop', 'python3-argcomplete', 'ros-foxy-ros-base', 'ros-dev-tools'])

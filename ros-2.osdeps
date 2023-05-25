@@ -12,8 +12,3 @@ slam/pcl:
 
 suitesparse:
   ubuntu: libsuitesparse-dev
-
-### NOTE: add here osdeps for now
-### probably we have to use rock package set or define additional osdep package set
-yaml-cpp:
-  ubuntu: libyaml-cpp-dev

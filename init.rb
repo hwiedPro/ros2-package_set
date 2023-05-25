@@ -1,10 +1,15 @@
-#Autoproj.config.declare("ros2_version",
-#    "string",
-#    default: "foxy",
-#    possible_values: ["foxy","humble"],
-#    doc: ["Which ros2 version? [foxy, humble]"])
-
-#if Autoproj.config.get("ros2_version") == "foxy" || Autoproj.config.get("ros2_version") == "humble"
-#    Autoproj.message ("Load workspace suffix " + Autoproj.config.get("ros2_version"))
-#    Autoproj.workspace.osdep_suffixes << Autoproj.config.get("ros2_version")
-#end
+os_names, os_versions = Autoproj.workspace.operating_system
+if os_names.include?('ubuntu')
+    if os_versions.include?('focal')
+        Autoproj.message ("Load ros2 osdeps with the suffix 'focal'")
+        Autoproj.workspace.osdep_suffixes << 'focal'
+        Autoproj.message Autoproj.workspace.osdep_suffixes
+    elsif os_versions.include?('jammy')
+        Autoproj.message ("Load ros2 osdeps with the suffix 'jammy'")
+        Autoproj.workspace.osdep_suffixes << 'jammy'
+    else
+        Autoproj.error("Unsupported ubunut version #{is_versions}")
+    end
+else
+    Autoproj.error("Unsupported os version: #{os_names}")
+end

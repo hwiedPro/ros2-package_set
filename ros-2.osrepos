@@ -1,0 +1,13 @@
+- ubuntu:
+    - focal:
+        - type: key
+          url: https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
+          id: ""
+        - type: repo
+          repo: deb http://packages.ros.org/ros2/ubuntu focal main
+    - jammy:
+        - type: key
+          url: https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
+          id: ""
+        - type: repo
+          repo: deb http://packages.ros.org/ros2/ubuntu jammy main

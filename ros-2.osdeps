@@ -12,3 +12,7 @@ slam/pcl:
 
 suitesparse:
   ubuntu: libsuitesparse-dev
+
+ros-dev-tools:
+    ubuntu:
+        '20.04,22.04': ros-dev-tools

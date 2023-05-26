@@ -2308,7 +2308,6 @@ opengl:
 openjdk-6-jdk:
     ubuntu:
         '22.04': openjdk-6-jdk
-openmpi ->
 openni-dev:
     ubuntu:
         '22.04': libopenni-dev
@@ -3113,7 +3112,6 @@ python-argcomplete:
 python-argh:
     ubuntu:
         '22.04': python-argh
-python-argparse ->
 python-astor-pip:
     ubuntu:
         '22.04': astor

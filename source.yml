@@ -16,3 +16,17 @@ version_control:
   - slam/slam3d_ros2:
     github: dfki-ric/slam3d_ros2
 
+  - base/cmake:
+    github: rock-core/base-cmake
+
+  - base/logging:
+    github: rock-core/base-logging
+
+  - base/types:
+    github: rock-core/base-types
+    patches:
+      - $AUTOPROJ_SOURCE_DIR/patches/base-types-no-sisl.patch
+      - $AUTOPROJ_SOURCE_DIR/patches/base-types-no-bindings-ruby.patch
+
+  - control/motor_controller:
+    github: rock-control/control-motor_controller

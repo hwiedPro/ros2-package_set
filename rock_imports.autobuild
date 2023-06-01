@@ -27,22 +27,21 @@ def generate_package_xml(pkg, dependencyname)
     end
 end
 
+
 def rock_import_package(name, libname: name, workspace: Autoproj.workspace)
+    ros_packagename = libname.gsub("/","-")
     package_common(:import, name, workspace: workspace) do |pkg|
-        ros_packagename = libname.gsub("/","-")
         pkg.post_import do 
             #if no package.xml exist, generate one including the dependencies
-            
             generate_package_xml(pkg, ros_packagename)
-        end
-        pkg.post_install do
-            pkg.progress_start "building %s" do
-                Autobuild::Subprocess.run(pkg, 'build', 'colcon', 'build', "--packages-select", ros_packagename, 'build', :working_directory => pkg.srcdir)
-                pkg.progress "build finished %s"
-            end
         end
         yield(pkg) if block_given?
     end
+    # add a metapackage to have both package definitions in autoproj:
+    # with '/' and '-' (colcon cannot have / in package names), so aup
+    # needs know the definition with '-' when calls from a plain ros2 package
+    # with a manually written package.xml (use - version there to enable colcon to evaluate the dependency)
+    metapackage ros_packagename, name
 end
 
 rock_import_package "base/cmake"

@@ -7,11 +7,15 @@ version_control:
   - slam/pclomp:
     github: dfki-ric/pclomp
 
+  - slam/nabo:
+    github: ethz-asl/libnabo
+
   - slam/pointmatcher:
     github: skasperski/libpointmatcher
 
   - slam/slam3d:
     github: dfki-ric/slam3d
+    branch: devel
 
   - slam/slam3d_ros2:
     github: dfki-ric/slam3d_ros2
@@ -30,3 +34,4 @@ version_control:
 
   - control/motor_controller:
     github: rock-control/control-motor_controller
+

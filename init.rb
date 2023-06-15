@@ -13,3 +13,8 @@ if os_names.include?('ubuntu')
 else
     Autoproj.error("Unsupported os version: #{os_names}")
 end
+
+ros_setup_bash = File.join(Autoproj.root_dir, '../install/setup.bash')
+if File.file?(ros_setup_bash)
+    Autoproj.env_source_file ros_setup_bash
+end

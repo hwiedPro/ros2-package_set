@@ -16,3 +16,18 @@ suitesparse:
 ros-dev-tools:
     ubuntu:
         '20.04,22.04': ros-dev-tools
+
+google-test:      
+    ubuntu: libgtest-dev
+
+osg:
+    ubuntu: libopenscenegraph-dev
+
+qt5:
+    ubuntu: qtbase5-dev
+
+qt5-opengl:
+    debian,ubuntu: libqt5opengl5-dev
+
+boost-serialization:
+    ubuntu: libboost-serialization-dev

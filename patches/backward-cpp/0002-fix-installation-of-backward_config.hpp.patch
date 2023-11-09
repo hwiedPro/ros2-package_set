@@ -1,0 +1,25 @@
+From 4800a9460b94b6e42bb4634784b34cfc238ea4ee Mon Sep 17 00:00:00 2001
+From: Janosch Machowinski <janosch.machowinski@dfki.de>
+Date: Tue, 21 Jun 2016 09:33:13 +0200
+Subject: [PATCH 2/2] fix installation of backward_config.hpp
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git CMakeLists.txt CMakeLists.txt
+index 51f07fb..392185f 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -81,7 +81,7 @@ set(BACKWARD_ENABLE $<TARGET_OBJECTS:backward_object> CACHE STRING
+ 	"Link with this object to setup backward automatically")
+ 
+ 
+-install (FILES backward.hpp backward_config.hpp DESTINATION include/backward)
++install (FILES backward.hpp ${CMAKE_BINARY_DIR}/backward_config.hpp DESTINATION include/backward)
+ # install (TARGETS backward_object DESTINATION lib)
+ install(FILES ${CMAKE_BINARY_DIR}/backward.pc DESTINATION lib/pkgconfig)
+ 
+-- 
+2.25.1
+

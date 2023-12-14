@@ -32,7 +32,7 @@ version_control:
     branch: feature/qt5
     patches:
       #- $AUTOPROJ_SOURCE_DIR/patches/base-types-no-sisl.patch
-      - $AUTOPROJ_SOURCE_DIR/patches/base-types-no-bindings-ruby.patch
+      #- $AUTOPROJ_SOURCE_DIR/patches/base-types-no-bindings-ruby.patch
 
   - control/motor_controller:
     github: rock-control/control-motor_controller

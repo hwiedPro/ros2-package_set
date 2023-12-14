@@ -1,3 +1,6 @@
+
+require_relative "./autobuild_extension.rb"
+
 os_names, os_versions = Autoproj.workspace.operating_system
 if os_names.include?('ubuntu')
     if os_versions.include?('focal')
@@ -18,3 +21,4 @@ ros_setup_bash = File.join(Autoproj.root_dir, '../install/setup.bash')
 if File.file?(ros_setup_bash)
     Autoproj.env_source_file ros_setup_bash
 end
+

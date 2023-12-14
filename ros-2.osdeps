@@ -31,3 +31,5 @@ qt5-opengl:
 
 boost-serialization:
     ubuntu: libboost-serialization-dev
+
+rtt: ignore

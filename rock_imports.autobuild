@@ -3,13 +3,17 @@ rock_import_package "base/cmake"
 rock_import_package "base/logging"
 rock_import_package "base/types" do |pkg|
     pkg.add_cmake_arg("-DBINDINGS_RUBY=OFF" )
+    pkg.add_cmake_arg("-DUSE_SISL=ON" )
     pkg.add_cmake_arg("-DSISL_PREFIX=#{ENV['AUTOPROJ_CURRENT_ROOT']}/../install/external-sisl/" )
+    pkg.depends_on "external/sisl"
 end
 rock_import_package "control/motor_controller"
 
 rock_import_package "planning/ugv_nav4d"
 rock_import_package "planning/sbpl"
-rock_import_package "planning/sbpl_spline_primitives"
+rock_import_package "planning/sbpl_spline_primitives" do |pkg|
+    pkg.add_cmake_arg("-DROCK_TEST_ENABLED=OFF")
+end
 rock_import_package "planning/traversability_generator3d"
 rock_import_package "gui/vizkit3d_debug_drawings" do |pkg|
     pkg.add_cmake_arg("-DWITH_PORTS=OFF" )

@@ -50,26 +50,6 @@ module Autobuild
     end
 end
 
-
-def rock_import_package(name, type = :import_package, libname: name, workspace: Autoproj.workspace)
-    ros_packagename = libname.gsub("/","-")
-
-    send(type, name) do |pkg|
-        pkg.post_import do 
-            #if no package.xml exist, generate one including the dependencies
-            generate_package_xml(pkg, ros_packagename)
-            pkg.write_colcon_pkg_file()
-        end
-        yield(pkg) if block_given?
-    end
-
-    # add a metapackage to have both package definitions in autoproj:
-    # with '/' and '-' (colcon cannot have / in package names), so aup
-    # needs know the definition with '-' when calls from a plain ros2 package
-    # with a manually written package.xml (use - version there to enable colcon to evaluate the dependency)
-    metapackage ros_packagename, name
-end
-
 def generate_package_xml(pkg, dependencyname)
     #puts "generate_package_xml" + pkg.srcdir + "/package.xml"
     if !File.exist?(pkg.srcdir + "/package.xml") then
@@ -98,3 +78,26 @@ def generate_package_xml(pkg, dependencyname)
         File.open(pkg.srcdir + "/package.xml", 'w') { |file| file.write(content) }
     end
 end
+
+
+def rock_import_package(name, type = :import_package, libname: name, workspace: Autoproj.workspace)
+    ros_packagename = libname.gsub("/","-")
+
+    send(type, name) do |pkg|
+        pkg.post_import do 
+            #if no package.xml exist, generate one including the dependencies
+            generate_package_xml(pkg, ros_packagename)
+            pkg.write_colcon_pkg_file()
+        end
+        yield(pkg) if block_given?
+    end
+
+    # add a metapackage to have both package definitions in autoproj:
+    # with '/' and '-' (colcon cannot have / in package names), so aup
+    # needs know the definition with '-' when calls from a plain ros2 package
+    # with a manually written package.xml (use - version there to enable colcon to evaluate the dependency)
+    metapackage ros_packagename, name
+end
+
+
+

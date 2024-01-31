@@ -1,0 +1,13 @@
+diff --git manifest.xml manifest.xml
+index 3ef1f8b..ec377fe 100644
+--- manifest.xml
++++ manifest.xml
+@@ -12,7 +12,7 @@
+     <!-- we need 'base' to be compiled with sisl support -->
+     <depend package="external/sisl" />
+     <depend package="eigen3" />
+-    <depend package="gui/osgviz/osgviz" />
++    <depend package="gui/osgviz" />
+     
+     <!--tags>stable</tags-->
+ </package>

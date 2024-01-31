@@ -7,12 +7,76 @@ version_control:
   - slam/pclomp:
     github: dfki-ric/pclomp
 
+  - slam/nabo:
+    github: ethz-asl/libnabo
+
   - slam/pointmatcher:
     github: skasperski/libpointmatcher
 
   - slam/slam3d:
     github: dfki-ric/slam3d
+    branch: devel
 
   - slam/slam3d_ros2:
     github: dfki-ric/slam3d_ros2
 
+  - base/cmake:
+    github: rock-core/base-cmake
+    branch: use_stock_FindBoost
+
+  - base/logging:
+    github: rock-core/base-logging
+
+  - base/types:
+    github: rock-core/base-types
+    branch: feature/qt5
+    patches:
+      #- $AUTOPROJ_SOURCE_DIR/patches/base-types-no-sisl.patch
+      #- $AUTOPROJ_SOURCE_DIR/patches/base-types-no-bindings-ruby.patch
+
+  - control/motor_controller:
+    github: rock-control/control-motor_controller
+
+  - planning/ugv_nav4d:
+    dfkigit: dfki-planning/ugv_nav4d
+    branch: feature/qt4-qt5
+    branch: feature/qt5
+  - planning/sbpl:
+    github: sbpl/sbpl
+  - planning/sbpl_spline_primitives:
+    github: rock-planning/planning-sbpl_spline_primitives
+    branch: feature/qt5
+  - planning/traversability_generator3d:
+    dfkigit: dfki-planning/traversability_generator3d
+  - gui/vizkit3d_debug_drawings:
+    github: rock-gui/gui-vizkit3d_debug_drawings
+    branch: feature/qt5
+  - control/trajectory_follower:
+    github: rock-control/control-trajectory_follower
+    branch: feature/qt5
+    patches:
+      - $AUTOPROJ_SOURCE_DIR/patches/control-trajectory_follower.patch
+  - slam/maps:
+    github: envire/slam-maps
+    branch: feature/qt5
+  - gui/vizkit3d:
+    github: rock-core/gui-vizkit3d
+    branch: feature/qt5
+  - gui/osgviz:
+    github: rock-core/gui-osgviz
+  - external/sisl:
+    github: SINTEF-Geometry/SISL
+  - gui/osg_qt5:
+    github: rock-core/gui-osg_qt4
+    branch: feature/qt5
+  - gui/qtpropertybrowser:
+    github: abhijitkundu/QtPropertyBrowser
+  - base/numeric:
+    github: rock-core/base-numeric
+  - base/boost_serialization:
+    github: envire/base-boost_serialization
+  - tools/backward-cpp:
+    github: bombela/backward-cpp.git
+    patches: 
+      - $AUTOPROJ_SOURCE_DIR/patches/backward-cpp/0001-add-pkg-config.patch
+      - $AUTOPROJ_SOURCE_DIR/patches/backward-cpp/0002-fix-installation-of-backward_config.hpp.patch

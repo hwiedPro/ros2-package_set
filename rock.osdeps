@@ -1,0 +1,5 @@
+# OSDEP file for deps of rock packages whose manifest.xml is auto-converted into a package.xml 
+# and the dependency is not already defined
+
+eigen3:
+    ubuntu: libeigen3-dev

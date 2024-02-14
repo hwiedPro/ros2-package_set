@@ -4,11 +4,13 @@ require 'json'
 # hackily reopen and extend the ImporterPackage class to store cmake args fo a colcon.pkg file
 module Autobuild 
     class ImporterPackage
+        attr_accessor :optional_deps
 
         #re-implement the original initialize of ImporterPackage + init @colcon_pkg
         def initialize(*args)
             @exclude = []
             @colcon_pkg = Hash.new
+            @optional_deps = Array.new
             super
         end
         
@@ -19,6 +21,11 @@ module Autobuild
             end
             # add it to the stored list
             @colcon_pkg["cmake-args"].push(value)
+        end
+
+        # function to add optional dependencies form the mainifest.xml to the package.xml
+        def use_optional_dependency(value)
+            @optional_deps.push(value)
         end
 
         # parse/append/write colcon.pkg file if cmake-args were eadded via add_cmake_arg()
@@ -65,6 +72,11 @@ def generate_package_xml(pkg, dependencyname)
         pkg.dependencies.each do |dep|
             content = content + "  <build_depend>#{dep.gsub("/","-")}</build_depend>\n"
         end
+
+        pkg.optional_deps.each do |dep|
+            content = content + "  <build_depend>#{dep.gsub("/","-")}</build_depend>\n"
+        end
+        
 
         content += %{
   <maintainer email="steffen.planthaber@dfki.de">Steffen Planthaber</maintainer>

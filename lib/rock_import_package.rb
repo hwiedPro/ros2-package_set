@@ -57,40 +57,8 @@ module Autobuild
     end
 end
 
-def generate_package_xml(pkg, dependencyname)
-    #puts "generate_package_xml" + pkg.srcdir + "/package.xml"
-    if !File.exist?(pkg.srcdir + "/package.xml") then
-        puts "  package.xml not present, generating for " + pkg.name
-        content = \
-        %{<?xml version="1.0"?>
-<package format="2">
-  <name>#{dependencyname}</name>
-  <version>0.0.0</version>
-  <description>auto generated file, see manifest.xml for information</description>
-        }
-
-        pkg.dependencies.each do |dep|
-            content = content + "  <build_depend>#{dep.gsub("/","-")}</build_depend>\n"
-        end
-
-        pkg.optional_deps.each do |dep|
-            content = content + "  <build_depend>#{dep.gsub("/","-")}</build_depend>\n"
-        end
-        
-
-        content += %{
-  <maintainer email="steffen.planthaber@dfki.de">Steffen Planthaber</maintainer>
-  <license>Copyright DFKI</license>
-  <export>
-    <build_type>cmake</build_type>
-  </export>
-</package>
-        }
-        #puts content
-        File.open(pkg.srcdir + "/package.xml", 'w') { |file| file.write(content) }
-    end
-end
-
+require_relative "package_xml_generation.rb"
+@ros2_package_xml_generator = Ros2::PackageXmlGeneration.new
 
 def rock_import_package(name, type = :import_package, libname: name, workspace: Autoproj.workspace)
     ros_packagename = libname.gsub("/","-")
@@ -98,7 +66,7 @@ def rock_import_package(name, type = :import_package, libname: name, workspace: 
     send(type, name) do |pkg|
         pkg.post_import do 
             #if no package.xml exist, generate one including the dependencies
-            generate_package_xml(pkg, ros_packagename)
+            @ros2_package_xml_generator.generate(pkg, ros_packagename)
             pkg.write_colcon_pkg_file()
         end
         yield(pkg) if block_given?

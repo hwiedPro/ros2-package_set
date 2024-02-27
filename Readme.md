@@ -1,5 +1,13 @@
 # Autoproj package set for managing ROS2 workspaces
 
+Contents of this repository was initiated and is currently developed at the
+[Robotics Innovation Center](http://robotik.dfki-bremen.de/en/startpage.html) of the
+[German Research Center for Artificial Intelligence (DFKI)](http://www.dfki.de) in Bremen.
+
+## License
+
+[BSD Clause 3](https://opensource.org/licenses/BSD-3-Clause)<br> - Copyright DFKI GmbH
+
 ## Autoproj
 
 Autoproj is a workspace management tool that provides the functionality of WStool/VCSTool and rosdep combined.

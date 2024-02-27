@@ -15,7 +15,6 @@ version_control:
 
   - slam/slam3d:
     github: dfki-ric/slam3d
-    branch: devel
 
   - slam/slam3d_ros2:
     github: dfki-ric/slam3d_ros2
@@ -40,6 +39,8 @@ version_control:
   - planning/ugv_nav4d:
     dfkigit: dfki-planning/ugv_nav4d
     branch: feature/qt4-qt5
+    patches:
+      - $AUTOPROJ_SOURCE_DIR/patches/ugv_nav4d.patch
     branch: feature/qt5
   - planning/sbpl:
     github: sbpl/sbpl

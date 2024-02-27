@@ -12,8 +12,9 @@ Contents of this repository was initiated and is currently developed at the
 
 Autoproj is a workspace management tool that provides the functionality of WStool/VCSTool and rosdep combined.
 
-Autoproj seperates package and workspace definitions. Package definitions are stored in a "package set", worspaces in a "buildconf" that is checked out into your workspace in a folder called "autoproj"
+Autoproj seperates package and workspace definitions.
 
+Package definitions are stored in a "package set", workspaces in a "buildconf" that is checked out into your workspace in a folder called "autoproj".
 
 ### A package_set (this repository) allows to define available packages for the workspace, it has three main configuration files 
 
@@ -29,13 +30,35 @@ A buildconf defines which packages from the package_set are actually installed i
 
 It is part of the workspace and thus can easily be shared among a team of developers (e.g. as a git repo).
 
-Is also may contain "overrides" to adapt your checkouts/builds from the defaults in the package_set, this includes switching branches of setting specific cmake args for single libraries.
+Is also may contain "overrides" to adapt your checkouts/builds from the defaults in the package_set, this includes switching branches or setting specific cmake args for single libraries and adding patches.
 
 * In the init.rb you define server configurations for source names used in the package set (e.g. "github")
-* The overrides.d folder may contain .xml files with changes of location or branches (e.g. when you workspace is using a fork)
+* The overrides.d folder may contain .xml files with changes of location or branches (e.g. when you workspace is using a fork) or add patches to be auto-applied on checkout/update
 * The overrides.rb file can change build definitions (e.g. build a scecific file in debug mode)
 
 
+# Installing
 
+This decribes installing for the first time, some parts can be omitted for future checkouts
+
+* sudo apt install ruby ruby-dev
+* mkdir src
+* cd src
+* wget http://rock-robotics.org/autoproj_bootstrap
+* ruby autoproj_bootstrap git https://git.hb.dfki.de/sw-backbone/continuous-integration/ric-backbone-ros2-buildconf
+* git config --global credential.helper cache
+
+* . env.sh
+* autoproj update [PACKAGE_TO_INSTALL]
+
+* cd ..
+* sudo apt install python3-colcon-common-extensions
+* colcon build
+
+Sometimes the initial buidl 
+* source 
+
+# Updating
+You can update autoproj-defined packages in a single command. To do this source the src/env.sh script and call `autoproj update` when you append a package name or forlder, onthe that package AND its dependencies are updated.
 
 

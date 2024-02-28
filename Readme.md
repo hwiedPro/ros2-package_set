@@ -41,20 +41,23 @@ Is also may contain "overrides" to adapt your checkouts/builds from the defaults
 
 This decribes installing for the first time, some parts can be omitted for future checkouts
 
-* sudo apt install ruby ruby-dev
-* mkdir src
-* cd src
-* wget http://rock-robotics.org/autoproj_bootstrap
-* ruby autoproj_bootstrap git https://git.hb.dfki.de/sw-backbone/continuous-integration/ric-backbone-ros2-buildconf
-* git config --global credential.helper cache
+* `sudo apt install ruby ruby-dev`
+* `mkdir src`
+* `cd src`
+* `wget http://rock-robotics.org/autoproj_bootstrap`
+* `ruby autoproj_bootstrap git https://github.com/dfki-ric/ros2-buildconf`
+  * answer the questions, when in doubt hit enter to use the default
+* `git config --global credential.helper cache`
 
-* . env.sh
-* autoproj update [PACKAGE_TO_INSTALL]
+* edit the src/autoproj/manifest file to only include the packages you want in your workspace (remove the ros-2 entry)
+* `. env.sh`
+* `autoproj update [PACKAGE_TO_INSTALL]`
+  * answer the questions, when in doubt hit enter to use the default
 
-* cd ..
-* sudo apt install python3-colcon-common-extensions
-* source /opt/ros/humble/setup.bash
-* colcon build
+* `cd ..`
+* `sudo apt install python3-colcon-common-extensions` if not already installed
+* `source /opt/ros/humble/setup.bash`
+* `colcon build`
 
 **Sometimes depending packages are not found through pkg-config on first try, in this case: call `source install/setup.bash` and try `colcon build` again**
 

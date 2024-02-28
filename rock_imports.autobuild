@@ -16,6 +16,7 @@ end
 rock_import_package "planning/sbpl"
 rock_import_package "planning/sbpl_spline_primitives" do |pkg|
     pkg.add_cmake_arg("-DROCK_TEST_ENABLED=OFF")
+    pkg.use_optional_dependency "gui/vizkit3d"
 end
 rock_import_package "planning/traversability_generator3d"
 rock_import_package "gui/vizkit3d_debug_drawings" do |pkg|

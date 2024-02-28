@@ -53,10 +53,11 @@ This decribes installing for the first time, some parts can be omitted for futur
 
 * cd ..
 * sudo apt install python3-colcon-common-extensions
+* source /opt/ros/humble/setup.bash
 * colcon build
 
-Sometimes the initial buidl 
-* source 
+**Sometimes depending packages are not found through pkg-config on first try, in this case: call `source install/setup.bash` and try `colcon build` again**
+
 
 # Updating
 You can update autoproj-defined packages in a single command. To do this source the src/env.sh script and call `autoproj update` when you append a package name or forlder, onthe that package AND its dependencies are updated.

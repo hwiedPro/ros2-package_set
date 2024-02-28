@@ -1,4 +1,4 @@
-name: ros-2
+name: ros2
 
 version_control:
   - slam/g2o:

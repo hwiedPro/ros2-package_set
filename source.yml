@@ -81,3 +81,7 @@ version_control:
     patches: 
       - $AUTOPROJ_SOURCE_DIR/patches/backward-cpp/0001-add-pkg-config.patch
       - $AUTOPROJ_SOURCE_DIR/patches/backward-cpp/0002-fix-installation-of-backward_config.hpp.patch
+
+  - gazebo_ros2_control/.*:
+    github: ros-controls/gazebo_ros2_control
+    interactive: true # multiple packages in this repo

@@ -78,10 +78,11 @@ version_control:
     github: envire/base-boost_serialization
   - tools/backward-cpp:
     github: bombela/backward-cpp.git
-    patches: 
+    patches:
       - $AUTOPROJ_SOURCE_DIR/patches/backward-cpp/0001-add-pkg-config.patch
       - $AUTOPROJ_SOURCE_DIR/patches/backward-cpp/0002-fix-installation-of-backward_config.hpp.patch
 
   - gazebo_ros2_control/.*:
-    github: ros-controls/gazebo_ros2_control
+    github: annaborn/gazebo_ros2_control
+    branch: humble
     interactive: true # multiple packages in this repo

@@ -2546,7 +2546,8 @@ omniorb:
             - libomniorb4-dev
 opencascade:
     ubuntu:
-        '20.04': libocct-data-exchange-dev
+        '20.04':
+            - libocct-data-exchange-dev
             - libocct-draw-dev
 opencl-headers:
     ubuntu:
@@ -2556,7 +2557,8 @@ opende:
         '20.04': libode-dev
 opengl:
     ubuntu:
-        '20.04': libgl1-mesa-dev
+        '20.04':
+            - libgl1-mesa-dev
             - libglu1-mesa-dev
 openjdk-6-jdk:
     ubuntu:
@@ -2631,7 +2633,8 @@ postgresql-client:
         '20.04': postgresql-client
 postgresql-postgis:
     ubuntu:
-        '20.04': postgresql-12-postgis-3
+        '20.04':
+            - postgresql-12-postgis-3
             - postgresql-contrib
             - postgresql-server-dev-all
 potrace:
@@ -3184,7 +3187,8 @@ zlib:
         '20.04': zlib1g-dev
 zziplib:
     ubuntu:
-        '20.04': libzzip-0-13
+        '20.04':
+            - libzzip-0-13
             - libzzip-dev
 adafruit-ads1x15-pip:
     ubuntu:

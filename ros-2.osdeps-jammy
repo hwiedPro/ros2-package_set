@@ -253,7 +253,8 @@ crypto++:
         '22.04': libcrypto++-dev
 curl:
     ubuntu:
-        '22.04': libcurl4-openssl-dev
+        '22.04':
+            - libcurl4-openssl-dev
             - curl
 curlpp-dev:
     ubuntu:
@@ -584,7 +585,8 @@ gradle:
         '22.04': gradle
 graphicsmagick:
     ubuntu:
-        '22.04': libgraphicsmagick++1-dev
+        '22.04':
+            - libgraphicsmagick++1-dev
             - graphicsmagick-libmagick-dev-compat
 graphviz:
     ubuntu:
@@ -1507,12 +1509,14 @@ libnewmat10-dev:
         '22.04': libnewmat10-dev
 libnl-3:
     ubuntu:
-        '22.04': libnl-3-200
+        '22.04':
+            - libnl-3-200
             - libnl-genl-3-200
             - libnl-route-3-200
 libnl-3-dev:
     ubuntu:
-        '22.04': libnl-3-dev
+        '22.04':
+            - libnl-3-dev
             - libnl-genl-3-dev
             - libnl-route-3-dev
 libnl-dev:
@@ -2386,7 +2390,8 @@ opende:
         '22.04': libode-dev
 opengl:
     ubuntu:
-        '22.04': libgl1-mesa-dev
+        '22.04':
+            - libgl1-mesa-dev
             - libglu1-mesa-dev
 openjdk-6-jdk:
     ubuntu:
@@ -3012,7 +3017,8 @@ zlib:
         '22.04': zlib1g-dev
 zziplib:
     ubuntu:
-        '22.04': libzzip-0-13
+        '22.04':
+            - libzzip-0-13
             - libzzip-dev
 adafruit-ads1x15-pip:
     ubuntu:
